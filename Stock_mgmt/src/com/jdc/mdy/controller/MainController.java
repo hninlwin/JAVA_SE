@@ -61,6 +61,7 @@ public class MainController {
     @FXML
     void update() {
 
+    	System.out.println("hello");
     }
     
     public static void showMain() {
