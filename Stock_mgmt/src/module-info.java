@@ -7,6 +7,8 @@ module Stock {
 	requires javafx.graphics;
 	requires javafx.controls;
 	requires java.sql;
+	requires lombok;
+	requires jdk.javadoc;
 	
 	opens com.jdc.mdy.controller to javafx.fxml;
 	

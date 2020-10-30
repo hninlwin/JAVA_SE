@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class ConnectionManager {
 
 	private static final String url="jdbc:mysql://localhost:3306/stock_db";
-	private static final String user="admin";
+	private static final String user="root";
 	private static final String pass="admin123";
 	
 	
