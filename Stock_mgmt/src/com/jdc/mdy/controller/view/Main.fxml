@@ -11,9 +11,9 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="800.0" maxWidth="1000.0" minHeight="600.0" minWidth="800.0" styleClass="form_dark_white" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.mdy.controller.MainController">
+<VBox maxHeight="700.0" maxWidth="900.0" minHeight="600.0" minWidth="800.0" styleClass="form_dark_white" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.mdy.controller.MainController">
    <children>
-      <HBox styleClass="box_background-color">
+      <HBox alignment="CENTER_LEFT" spacing="3.0" styleClass="box_background-color">
          <children>
             <Label styleClass="text_field_color" text="Stock Management System">
                <font>
@@ -22,7 +22,7 @@
             </Label>
             <HBox alignment="CENTER_RIGHT" spacing="8.0" HBox.hgrow="ALWAYS">
                <children>
-                  <Label onMouseClicked="#save" styleClass="text_field_color">
+                  <Label fx:id="lb_save" onMouseClicked="#btnControls" styleClass="text_field_color">
                      <tooltip>
                         <Tooltip text="Save" />
                      </tooltip>
@@ -33,7 +33,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label layoutX="469.0" layoutY="13.0" onMouseClicked="#update" styleClass="text_field_color">
+                  <Label fx:id="lb_update" layoutX="469.0" layoutY="13.0" onMouseClicked="#btnControls" styleClass="text_field_color">
                      <tooltip>
                         <Tooltip text="Update" />
                      </tooltip>
@@ -44,7 +44,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label layoutX="591.0" layoutY="14.0" onMouseClicked="#search" styleClass="text_field_color">
+                  <Label fx:id="lb_search" layoutX="591.0" layoutY="14.0" onMouseClicked="#btnControls" styleClass="text_field_color">
                      <tooltip>
                         <Tooltip text="Search" />
                      </tooltip>
@@ -55,7 +55,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </Label>
-                  <Label layoutX="591.0" layoutY="13.0" onMouseClicked="#delete" styleClass="text_field_color">
+                  <Label fx:id="lb_delete" layoutX="591.0" layoutY="13.0" onMouseClicked="#btnControls" styleClass="text_field_color">
                      <tooltip>
                         <Tooltip text="Delete" />
                      </tooltip>
@@ -71,7 +71,7 @@
             </HBox>
          </children>
       </HBox>
-      <HBox prefHeight="100.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+      <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0" VBox.vgrow="ALWAYS">
          <children>
             <VBox fx:id="vb_button" alignment="CENTER_LEFT" prefHeight="723.0" prefWidth="202.0" spacing="5.0">
                <children>
@@ -80,7 +80,7 @@
                         <SVGPath content="M24 24.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918zM24 24.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z  M10.225 24.854c1.728-1.13 3.877-1.989 6.243-2.513-0.47-0.556-0.897-1.176-1.265-1.844-0.95-1.726-1.453-3.627-1.453-5.497 0-2.689 0-5.228 0.956-7.305 0.928-2.016 2.598-3.265 4.976-3.734-0.529-2.39-1.936-3.961-5.682-3.961-6 0-6 4.029-6 9 0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h8.719c0.454-0.403 0.956-0.787 1.506-1.146zM10.225 24.854c1.728-1.13 3.877-1.989 6.243-2.513-0.47-0.556-0.897-1.176-1.265-1.844-0.95-1.726-1.453-3.627-1.453-5.497 0-2.689 0-5.228 0.956-7.305 0.928-2.016 2.598-3.265 4.976-3.734-0.529-2.39-1.936-3.961-5.682-3.961-6 0-6 4.029-6 9 0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h8.719c0.454-0.403 0.956-0.787 1.506-1.146z" styleClass="text_field_color" />
                         <Label styleClass="text_field_color" text="SUPPLIER">
                            <font>
-                              <Font size="16.0" />
+                              <Font name="Bodoni 72 Smallcaps Book" size="16.0" />
                            </font>
                         </Label>
                      </children>
@@ -103,7 +103,7 @@
                         <SVGPath content="M30.5 0h-12c-0.825 0-1.977 0.477-2.561 1.061l-14.879 14.879c-0.583 0.583-0.583 1.538 0 2.121l12.879 12.879c0.583 0.583 1.538 0.583 2.121 0l14.879-14.879c0.583-0.583 1.061-1.736 1.061-2.561v-12c0-0.825-0.675-1.5-1.5-1.5zM23 12c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3zM30.5 0h-12c-0.825 0-1.977 0.477-2.561 1.061l-14.879 14.879c-0.583 0.583-0.583 1.538 0 2.121l12.879 12.879c0.583 0.583 1.538 0.583 2.121 0l14.879-14.879c0.583-0.583 1.061-1.736 1.061-2.561v-12c0-0.825-0.675-1.5-1.5-1.5zM23 12c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z" styleClass="text_field_color" />
                         <Label styleClass="text_field_color" text="ITEM">
                            <font>
-                              <Font size="16.0" />
+                              <Font name="Bodoni 72 Smallcaps Book" size="16.0" />
                            </font>
                         </Label>
                      </children>
@@ -123,7 +123,7 @@
                         <SVGPath content="M32 10l-16-8-16 8 16 8 16-8zM16 4.655l10.689 5.345-10.689 5.345-10.689-5.345 10.689-5.345zM28.795 14.398l3.205 1.602-16 8-16-8 3.205-1.602 12.795 6.398zM28.795 20.398l3.205 1.602-16 8-16-8 3.205-1.602 12.795 6.398zM32 10l-16-8-16 8 16 8 16-8zM16 4.655l10.689 5.345-10.689 5.345-10.689-5.345 10.689-5.345zM28.795 14.398l3.205 1.602-16 8-16-8 3.205-1.602 12.795 6.398zM28.795 20.398l3.205 1.602-16 8-16-8 3.205-1.602 12.795 6.398z" styleClass="text_field_color" />
                         <Label styleClass="text_field_color" text="CATEGORY">
                            <font>
-                              <Font size="16.0" />
+                              <Font name="Bodoni 72 Smallcaps Book" size="16.0" />
                            </font>
                         </Label>
                      </children>
@@ -144,9 +144,9 @@
                            <HBox.margin>
                               <Insets left="5.0" />
                            </HBox.margin></SVGPath>
-                        <Label styleClass="text_field_color" text="STOCK">
+                        <Label styleClass="text_field_color" text="STOCK ">
                            <font>
-                              <Font size="16.0" />
+                              <Font name="Bodoni 72 Smallcaps Book" size="16.0" />
                            </font>
                         </Label>
                      </children>
@@ -166,7 +166,7 @@
                         <SVGPath content="M20 2c7.732 0 14 6.268 14 14s-6.268 14-14 14v-3c2.938 0 5.701-1.144 7.778-3.222s3.222-4.84 3.222-7.778c0-2.938-1.144-5.701-3.222-7.778s-4.84-3.222-7.778-3.222c-2.938 0-5.701 1.144-7.778 3.222-1.598 1.598-2.643 3.601-3.041 5.778h5.819l-7 8-7-8h5.143c0.971-6.784 6.804-12 13.857-12zM26 14v4h-8v-10h4v6zM20 2c7.732 0 14 6.268 14 14s-6.268 14-14 14v-3c2.938 0 5.701-1.144 7.778-3.222s3.222-4.84 3.222-7.778c0-2.938-1.144-5.701-3.222-7.778s-4.84-3.222-7.778-3.222c-2.938 0-5.701 1.144-7.778 3.222-1.598 1.598-2.643 3.601-3.041 5.778h5.819l-7 8-7-8h5.143c0.971-6.784 6.804-12 13.857-12zM26 14v4h-8v-10h4v6z" styleClass="text_field_color" />
                         <Label styleClass="text_field_color" text="STOCK HISTORY">
                            <font>
-                              <Font size="16.0" />
+                              <Font name="Bodoni 72 Smallcaps Book" size="16.0" />
                            </font>
                         </Label>
                      </children>
@@ -186,7 +186,7 @@
                         <SVGPath content="M30 19l-9 9-3-3-2 2 5 5 11-11zM30 19l-9 9-3-3-2 2 5 5 11-11z  M14 24h10v-3.598c-2.101-1.225-4.885-2.066-8-2.321v-1.649c2.203-1.242 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h14v-2zM14 24h10v-3.598c-2.101-1.225-4.885-2.066-8-2.321v-1.649c2.203-1.242 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h14v-2z" styleClass="text_field_color" />
                         <Label styleClass="text_field_color" text="USER">
                            <font>
-                              <Font size="16.0" />
+                              <Font name="Bodoni 72 Smallcaps Book" size="16.0" />
                            </font>
                         </Label>
                      </children>
@@ -206,7 +206,7 @@
                         <SVGPath content="M31.708 25.708c-0-0-0-0-0-0l-9.708-9.708 9.708-9.708c0-0 0-0 0-0 0.105-0.105 0.18-0.227 0.229-0.357 0.133-0.356 0.057-0.771-0.229-1.057l-4.586-4.586c-0.286-0.286-0.702-0.361-1.057-0.229-0.13 0.048-0.252 0.124-0.357 0.228 0 0-0 0-0 0l-9.708 9.708-9.708-9.708c-0-0-0-0-0-0-0.105-0.104-0.227-0.18-0.357-0.228-0.356-0.133-0.771-0.057-1.057 0.229l-4.586 4.586c-0.286 0.286-0.361 0.702-0.229 1.057 0.049 0.13 0.124 0.252 0.229 0.357 0 0 0 0 0 0l9.708 9.708-9.708 9.708c-0 0-0 0-0 0-0.104 0.105-0.18 0.227-0.229 0.357-0.133 0.355-0.057 0.771 0.229 1.057l4.586 4.586c0.286 0.286 0.702 0.361 1.057 0.229 0.13-0.049 0.252-0.124 0.357-0.229 0-0 0-0 0-0l9.708-9.708 9.708 9.708c0 0 0 0 0 0 0.105 0.105 0.227 0.18 0.357 0.229 0.356 0.133 0.771 0.057 1.057-0.229l4.586-4.586c0.286-0.286 0.362-0.702 0.229-1.057-0.049-0.13-0.124-0.252-0.229-0.357zM31.708 25.708c-0-0-0-0-0-0l-9.708-9.708 9.708-9.708c0-0 0-0 0-0 0.105-0.105 0.18-0.227 0.229-0.357 0.133-0.356 0.057-0.771-0.229-1.057l-4.586-4.586c-0.286-0.286-0.702-0.361-1.057-0.229-0.13 0.048-0.252 0.124-0.357 0.228 0 0-0 0-0 0l-9.708 9.708-9.708-9.708c-0-0-0-0-0-0-0.105-0.104-0.227-0.18-0.357-0.228-0.356-0.133-0.771-0.057-1.057 0.229l-4.586 4.586c-0.286 0.286-0.361 0.702-0.229 1.057 0.049 0.13 0.124 0.252 0.229 0.357 0 0 0 0 0 0l9.708 9.708-9.708 9.708c-0 0-0 0-0 0-0.104 0.105-0.18 0.227-0.229 0.357-0.133 0.355-0.057 0.771 0.229 1.057l4.586 4.586c0.286 0.286 0.702 0.361 1.057 0.229 0.13-0.049 0.252-0.124 0.357-0.229 0-0 0-0 0-0l9.708-9.708 9.708 9.708c0 0 0 0 0 0 0.105 0.105 0.227 0.18 0.357 0.229 0.356 0.133 0.771 0.057 1.057-0.229l4.586-4.586c0.286-0.286 0.362-0.702 0.229-1.057-0.049-0.13-0.124-0.252-0.229-0.357z" scaleX="0.75" scaleY="0.75" styleClass="text_field_color" />
                         <Label styleClass="text_field_color" text="EXIT">
                            <font>
-                              <Font size="16.0" />
+                              <Font name="Bodoni 72 Smallcaps Book" size="16.0" />
                            </font>
                         </Label>
                      </children>
@@ -229,27 +229,48 @@
                   <Insets />
                </HBox.margin>
             </VBox>
-            <VBox HBox.hgrow="ALWAYS">
+            <VBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
                <children>
-                  <HBox prefHeight="30.0" prefWidth="30.0">
+                  <HBox>
                      <children>
                         <Label fx:id="lb_form" styleClass="text_field_color" text="Item Form">
                            <font>
-                              <Font size="25.0" />
+                              <Font name="Bodoni 72 Oldstyle Book" size="25.0" />
                            </font>
                         </Label>
                         <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
                            <children>
-                              <Label fx:id="lb_message" styleClass="warning_message" text="User">
+                              <Label styleClass="text_field_color" text="Login By :">
                                  <font>
-                                    <Font size="15.0" />
+                                    <Font size="11.0" />
+                                 </font>
+                              </Label>
+                              <Label fx:id="lb_user" layoutX="426.0" layoutY="13.0" styleClass="text_field_color">
+                                 <font>
+                                    <Font size="11.0" />
                                  </font>
                               </Label>
                            </children>
+                           <HBox.margin>
+                              <Insets bottom="5.0" top="10.0" />
+                           </HBox.margin>
                         </HBox>
                      </children>
                   </HBox>
-                  <StackPane fx:id="st_pane" prefHeight="150.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                  <HBox alignment="TOP_RIGHT">
+                     <children>
+                        <Label fx:id="lb_message" styleClass="warning_message">
+                           <font>
+                              <Font size="11.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <StackPane fx:id="st_pane" maxHeight="600.0" maxWidth="800.0" prefHeight="150.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                     <styleClass>
+                        <String fx:value="button_radius" />
+                        <String fx:value="sub_form_color" />
+                     </styleClass></StackPane>
                </children>
                <padding>
                   <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

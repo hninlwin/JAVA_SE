@@ -4,7 +4,9 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import javafx.event.ActionEvent;
+import com.jdc.mdy.entity.User;
+
+import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,6 +18,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class MainController implements Initializable {
 
@@ -29,53 +32,48 @@ public class MainController implements Initializable {
 	private StackPane st_pane;
 	@FXML
 	private VBox vb_button;
-
 	@FXML
-	void delete() {
-
-	}
-
-	@FXML
-	void save() {
-
-	}
-
-	@FXML
-	void search() {
-
-	}
-
-	@FXML
-	void update() {
-
-	}
-
+	private Label lb_user;
+	private static User user;
+	
 	@FXML
 	void formClick(MouseEvent event) {
 
 		HBox hb = (HBox) event.getSource();
-		hb.getChildren().filtered(lb->lb instanceof Label).forEach(l->{
-			Label ll=(Label) l;
-			
+		hb.getChildren().filtered(lb -> lb instanceof Label).forEach(l -> {
+			Label ll = (Label) l;
+
 			if (ll.getText().equals("EXIT")) {
 				lb_form.getScene().getWindow().hide();
 			} else {
 				lb_form.setText(ll.getText());
 				loadView(hb.getId());
 			}
-			
+
 		});
-			
+
+	}
+	
+	@FXML
+	void btnControls(MouseEvent event) {
+		
+		Label lb=(Label) event.getSource();
+		ButtonManagerControl.getButtonAction(lb.getId());
+		
 	}
 
-	public static void showMain() {
+	
+	public static void showMain(User user) {
+		
+		MainController.user=user;
 
 		try {
 
 			Parent root = FXMLLoader.load(MainController.class.getResource("view/Main.fxml"));
 			Stage stage = new Stage();
+			
+			//Dimension dm=Toolkit.getDefaultToolkit().getScreenSize();
 			stage.setScene(new Scene(root));
-			stage.centerOnScreen();
 			stage.show();
 
 		} catch (IOException e) {
@@ -89,18 +87,32 @@ public class MainController implements Initializable {
 			Parent root = FXMLLoader.load(MainController.class.getResource("view/" + viewName + ".fxml"));
 			st_pane.getChildren().clear();
 			st_pane.getChildren().add(root);
-			
+			slideAnimation();
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
 	}
+	private void slideAnimation() {
+		TranslateTransition tr = new TranslateTransition();
+		tr.setNode(st_pane);
+		tr.setAutoReverse(false);
+		tr.setDuration(Duration.millis(1000));
+
+		tr.setFromX(800);
+		tr.setToX(0);
+
+		tr.play();
+	}
+
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
 		loadView("User");
-
+		lb_form.setText("User");
+		lb_user.setText(user.getName());
+	
 	}
 
 }

@@ -2,6 +2,10 @@
 	-fx-background-color:#F5F5F5;
 }
 
+.sub_form_color{
+	-fx-border-color: #039BE5;
+}
+
 .text_field_color{
 	-fx-text-fill: #039BE5;
 	-fx-fill: #039BE5;
@@ -14,13 +18,14 @@
 
 .box_background-color{
 	-fx-background-color: #039BE5,#F5F5F5,#F5F5F5;
-	-fx-background-insets: 0 0 -2 0, 0 0 0 0, 0 -1 3 -1;
+	-fx-background-insets: 0.0 0.0 -2.0 0.0, 0.0 0.0 0.0 0.0, 0.0 -1.0 3.0 -1.0;
 }
 
+
 .button_radius{
-	-fx-background-radius: 10px;
-	-fx-border-radius: 10px;
-	-fx-border-width: 1px;
+	-fx-background-radius: 10.0px;
+	-fx-border-radius: 10.0px;
+	-fx-border-width: 1.0px;
 }
 
 .button_color{
@@ -45,8 +50,8 @@
     -fx-text-fill: #039BE5;
     -fx-border-color: #039BE5;
     -fx-background-color: #F5F5F5;
-    -fx-background-radius: 10px;
-     -fx-border-radius: 10px;
+    -fx-background-radius: 10.0px;
+     -fx-border-radius: 10.0px;
    
     
 }

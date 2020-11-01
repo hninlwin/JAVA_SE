@@ -13,6 +13,5 @@ public class User {
 	public enum Role{
 		Admin,Cashier
 	}
-		
 	
 }

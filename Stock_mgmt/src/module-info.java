@@ -9,6 +9,7 @@ module Stock {
 	requires java.sql;
 	requires lombok;
 	requires jdk.javadoc;
+	requires java.desktop;
 	
 	opens com.jdc.mdy.controller to javafx.fxml;
 	

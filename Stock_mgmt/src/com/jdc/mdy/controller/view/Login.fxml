@@ -11,19 +11,9 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" spacing="5.0" styleClass="form_dark_white" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.mdy.controller.LoginController">
    <children>
-      <HBox>
-         <children>
-            <Label text="Login Form">
-               <font>
-                  <Font size="40.0" />
-               </font>
-            </Label>
-         </children>
-      </HBox>
-      <HBox>
+      <HBox VBox.vgrow="ALWAYS">
          <children>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="242.0">
                <children>
@@ -32,6 +22,15 @@
             </VBox>
             <VBox alignment="CENTER" spacing="8.0">
                <children>
+                  <HBox>
+                     <children>
+                        <Label styleClass="text_field_color" text="Login Form">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="40.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
                   <HBox>
                      <children>
                         <Label fx:id="lb_message" styleClass="warning_message" />

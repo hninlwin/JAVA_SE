@@ -58,7 +58,7 @@ public class LoginController implements Initializable {
 				throw new StockException("Please re_type password !");
 			}
 			
-			MainController.showMain();
+			MainController.showMain(user);
 			cancel();
 
 		} catch (Exception e) {
