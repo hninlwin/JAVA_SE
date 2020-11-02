@@ -13,8 +13,9 @@
 
 <VBox maxHeight="700.0" maxWidth="900.0" minHeight="600.0" minWidth="800.0" styleClass="form_dark_white" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.mdy.controller.MainController">
    <children>
-      <HBox alignment="CENTER_LEFT" spacing="3.0" styleClass="box_background-color">
+      <HBox alignment="CENTER_LEFT" spacing="5.0" styleClass="box_background-color">
          <children>
+            <SVGPath content="M32 18.451l-16-12.42-16 12.42v-5.064l16-12.42 16 12.42zM28 18v12h-8v-8h-8v8h-8v-12l12-9zM32 18.451l-16-12.42-16 12.42v-5.064l16-12.42 16 12.42zM28 18v12h-8v-8h-8v8h-8v-12l12-9z" styleClass="text_field_color" />
             <Label styleClass="text_field_color" text="Stock Management System">
                <font>
                   <Font name="Arial Rounded MT Bold" size="30.0" />
@@ -75,7 +76,7 @@
          <children>
             <VBox fx:id="vb_button" alignment="CENTER_LEFT" prefHeight="723.0" prefWidth="202.0" spacing="5.0">
                <children>
-                  <HBox id="Supplier" alignment="CENTER_LEFT" onMouseClicked="#formClick" prefHeight="100.0" prefWidth="200.0" spacing="8.0">
+                  <HBox id="Supplier" alignment="CENTER_LEFT" onMouseClicked="#formClick" prefHeight="100.0" prefWidth="200.0" spacing="3.0">
                      <children>
                         <SVGPath content="M24 24.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918zM24 24.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z  M10.225 24.854c1.728-1.13 3.877-1.989 6.243-2.513-0.47-0.556-0.897-1.176-1.265-1.844-0.95-1.726-1.453-3.627-1.453-5.497 0-2.689 0-5.228 0.956-7.305 0.928-2.016 2.598-3.265 4.976-3.734-0.529-2.39-1.936-3.961-5.682-3.961-6 0-6 4.029-6 9 0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h8.719c0.454-0.403 0.956-0.787 1.506-1.146zM10.225 24.854c1.728-1.13 3.877-1.989 6.243-2.513-0.47-0.556-0.897-1.176-1.265-1.844-0.95-1.726-1.453-3.627-1.453-5.497 0-2.689 0-5.228 0.956-7.305 0.928-2.016 2.598-3.265 4.976-3.734-0.529-2.39-1.936-3.961-5.682-3.961-6 0-6 4.029-6 9 0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h8.719c0.454-0.403 0.956-0.787 1.506-1.146z" styleClass="text_field_color" />
                         <Label styleClass="text_field_color" text="SUPPLIER">
@@ -138,7 +139,7 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </HBox>
-                  <HBox id="Stock" alignment="CENTER_LEFT" layoutX="15.0" layoutY="115.0" onMouseClicked="#formClick" prefHeight="100.0" prefWidth="200.0" spacing="8.0">
+                  <HBox id="Stock" alignment="CENTER_LEFT" layoutX="15.0" layoutY="115.0" onMouseClicked="#formClick" prefHeight="100.0" prefWidth="200.0" spacing="12.0">
                      <children>
                         <SVGPath content="M20.016 6.984v-3h-16.031v3h16.031zM15 14.016v-2.016h-6v2.016h6zM20.016 2.016q0.75 0 1.359 0.586t0.609 1.383v3.047q0 1.125-0.984 1.688v11.297q0 0.797-0.656 1.383t-1.359 0.586h-13.969q-0.703 0-1.359-0.586t-0.656-1.383v-11.297q-0.984-0.563-0.984-1.688v-3.047q0-0.797 0.609-1.383t1.359-0.586h16.031zM20.016 6.984v-3h-16.031v3h16.031zM15 14.016v-2.016h-6v2.016h6zM20.016 2.016q0.75 0 1.359 0.586t0.609 1.383v3.047q0 1.125-0.984 1.688v11.297q0 0.797-0.656 1.383t-1.359 0.586h-13.969q-0.703 0-1.359-0.586t-0.656-1.383v-11.297q-0.984-0.563-0.984-1.688v-3.047q0-0.797 0.609-1.383t1.359-0.586h16.031z" scaleX="1.5" scaleY="1.5" styleClass="text_field_color">
                            <HBox.margin>
@@ -240,11 +241,7 @@
                         </Label>
                         <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
                            <children>
-                              <Label styleClass="text_field_color" text="Login By :">
-                                 <font>
-                                    <Font size="11.0" />
-                                 </font>
-                              </Label>
+                              <SVGPath content="M18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918zM18 22.082v-1.649c2.203-1.241 4-4.337 4-7.432 0-4.971 0-9-6-9s-6 4.029-6 9c0 3.096 1.797 6.191 4 7.432v1.649c-6.784 0.555-12 3.888-12 7.918h28c0-4.030-5.216-7.364-12-7.918z" scaleX="0.7" scaleY="0.7" scaleZ="0.5" styleClass="text_field_color" />
                               <Label fx:id="lb_user" layoutX="426.0" layoutY="13.0" styleClass="text_field_color">
                                  <font>
                                     <Font size="11.0" />

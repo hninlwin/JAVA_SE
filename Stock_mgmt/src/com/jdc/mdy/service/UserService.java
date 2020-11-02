@@ -14,7 +14,7 @@ public class UserService {
 
 	public User searchId(String text) {
 		
-		String sql="select * from user_tbl where name=?";
+		String sql="select * from user_tbl where loginId=?";
 		
 		try(Connection con=getConnection();
 			PreparedStatement stmt=con.prepareStatement(sql)){
@@ -25,9 +25,11 @@ public class UserService {
 			while(rs.next()) {
 				User user=new User();
 				user.setId(rs.getInt("id"));
+				user.setLoginId(rs.getString("loginId"));
 				user.setName(rs.getString("name"));
 				user.setPassword(rs.getString("password"));
 				user.setRole(Role.valueOf(rs.getString("role")));
+				user.setActive(rs.getBoolean("active"));
 				
 				return user;
 			}

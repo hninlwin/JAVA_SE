@@ -1,13 +1,14 @@
 package com.jdc.mdy.entity;
 
+import java.time.LocalDate;
+
 import lombok.Data;
 
 @Data
-public class Item {
+public class StockIn {
 
 	private int id;
-	private String name;
-	private int price;
-	private Category category;
+	private int in_qty;
+	private LocalDate in_date;
 	private boolean active;
 }
