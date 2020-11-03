@@ -8,6 +8,8 @@ public class MessageManager {
 
 	public enum MessageStyle {
 		success, warning, error
+		
+		
 	}
 
 	public MessageManager(Label lb) {
@@ -17,20 +19,23 @@ public class MessageManager {
 	private static void setLabelColor(MessageStyle styleType) {
 
 		switch (styleType) {
-		case success:
-			lb.setStyle("-fx-text-fill: green;");
-			break;
-		case warning:
-			lb.setStyle("-fx-text-fill: orange;");
-			break;
-		case error:
-			lb.setStyle("-fx-text-fill: red;");
-			break;
-
-		default:
-			lb.setStyle("-fx-text-fill: #0277BD;");
-			break;
-		}
+		
+			case success:
+				lb.setStyle("-fx-text-fill: green;");
+				break;
+			case warning:
+				lb.setStyle("-fx-text-fill: orange;");
+				break;
+			case error:
+				lb.setStyle("-fx-text-fill: red;");
+				break;
+	
+			default:
+				lb.setStyle("-fx-text-fill: #0277BD;");
+				break;
+			}
+		
+		
 		
 	}
 

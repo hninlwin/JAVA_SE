@@ -8,10 +8,10 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.SVGPath?>
-<?import javafx.scene.control.cell.PropertyValueFactory ?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" spacing="10.0" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.mdy.controller.UserController">
    
@@ -50,30 +50,30 @@
             <ComboBox fx:id="cbo_role" prefWidth="150.0" />
          </children>
       </HBox>
-      <CheckBox fx:id="ch_active" mnemonicParsing="false" text="Active" />
+      <CheckBox fx:id="ch_active" mnemonicParsing="false" text="Active" visible="false" />
       <TableView fx:id="tv_user" prefHeight="200.0" prefWidth="200.0" styleClass="text_field_color" VBox.vgrow="ALWAYS">
         <columns>
           <TableColumn fx:id="col_num" prefWidth="48.0" resizable="false" text="No." />
           
-          <TableColumn prefWidth="288.0" resizable="false" text="Login ID" >	
+          <TableColumn prefWidth="288.0" resizable="false" text="Login ID">	
           	<cellValueFactory>
-          		<PropertyValueFactory property="loginId"/>
+          		<PropertyValueFactory property="loginId" />
           	</cellValueFactory>
           </TableColumn>
-          <TableColumn prefWidth="288.0" resizable="false" text="User Name" >	
+          <TableColumn prefWidth="288.0" resizable="false" text="User Name">	
           	<cellValueFactory>
-          		<PropertyValueFactory property="name"/>
+          		<PropertyValueFactory property="name" />
           	</cellValueFactory>
           </TableColumn>
           
-           <TableColumn prefWidth="288.0" resizable="false" text="Password" >	
+           <TableColumn prefWidth="288.0" resizable="false" text="Password">	
           	<cellValueFactory>
-          		<PropertyValueFactory property="password"/>
+          		<PropertyValueFactory property="password" />
           	</cellValueFactory>
           </TableColumn>
-          <TableColumn prefWidth="288.0" resizable="false" text="Role" >	
+          <TableColumn prefWidth="288.0" resizable="false" text="Role">	
           	<cellValueFactory>
-          		<PropertyValueFactory property="role"/>
+          		<PropertyValueFactory property="role" />
           	</cellValueFactory>
           </TableColumn>
         </columns>

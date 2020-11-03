@@ -63,6 +63,7 @@ public class MainController implements Initializable {
 		Label lb=(Label) event.getSource();
 		ButtonManagerControl.getButtonAction(lb.getId());
 		
+		
 	}
 
 	
