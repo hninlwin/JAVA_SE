@@ -139,13 +139,13 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </HBox>
-                  <HBox id="Stock" alignment="CENTER_LEFT" layoutX="15.0" layoutY="115.0" onMouseClicked="#formClick" prefHeight="100.0" prefWidth="200.0" spacing="12.0">
+                  <HBox id="StockIn" alignment="CENTER_LEFT" layoutX="15.0" layoutY="115.0" onMouseClicked="#formClick" prefHeight="100.0" prefWidth="200.0" spacing="12.0">
                      <children>
-                        <SVGPath content="M20.016 6.984v-3h-16.031v3h16.031zM15 14.016v-2.016h-6v2.016h6zM20.016 2.016q0.75 0 1.359 0.586t0.609 1.383v3.047q0 1.125-0.984 1.688v11.297q0 0.797-0.656 1.383t-1.359 0.586h-13.969q-0.703 0-1.359-0.586t-0.656-1.383v-11.297q-0.984-0.563-0.984-1.688v-3.047q0-0.797 0.609-1.383t1.359-0.586h16.031zM20.016 6.984v-3h-16.031v3h16.031zM15 14.016v-2.016h-6v2.016h6zM20.016 2.016q0.75 0 1.359 0.586t0.609 1.383v3.047q0 1.125-0.984 1.688v11.297q0 0.797-0.656 1.383t-1.359 0.586h-13.969q-0.703 0-1.359-0.586t-0.656-1.383v-11.297q-0.984-0.563-0.984-1.688v-3.047q0-0.797 0.609-1.383t1.359-0.586h16.031z" scaleX="1.5" scaleY="1.5" styleClass="text_field_color">
+                        <SVGPath content="M28 16h-5l-7 7-7-7h-5l-4 8v2h32v-2l-4-8zM0 28h32v2h-32v-2zM18 10v-8h-4v8h-7l9 9 9-9h-7zM28 16h-5l-7 7-7-7h-5l-4 8v2h32v-2l-4-8zM0 28h32v2h-32v-2zM18 10v-8h-4v8h-7l9 9 9-9h-7z" styleClass="text_field_color">
                            <HBox.margin>
                               <Insets left="5.0" />
                            </HBox.margin></SVGPath>
-                        <Label styleClass="text_field_color" text="STOCK ">
+                        <Label styleClass="text_field_color" text="STOCK IN">
                            <font>
                               <Font name="Bodoni 72 Smallcaps Book" size="16.0" />
                            </font>
@@ -162,7 +162,31 @@
                         <Cursor fx:constant="HAND" />
                      </cursor>
                   </HBox>
-                  <HBox id="History" alignment="CENTER_LEFT" layoutX="15.0" layoutY="215.0" onMouseClicked="#formClick" prefHeight="100.0" prefWidth="200.0" spacing="8.0">
+                  <HBox id="StockOut" alignment="CENTER_LEFT" layoutX="15.0" layoutY="229.0" onMouseClicked="#formClick" prefHeight="100.0" prefWidth="200.0" spacing="12.0">
+                     <children>
+                        <SVGPath content="M0 28h32v2h-32zM32 24v2h-32v-2l4-8h8v4h8v-4h8zM7 10l9-9 9 9h-7v8h-4v-8zM0 28h32v2h-32zM32 24v2h-32v-2l4-8h8v4h8v-4h8zM7 10l9-9 9 9h-7v8h-4v-8z" styleClass="text_field_color">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </SVGPath>
+                        <Label styleClass="text_field_color" text="STOCK OUT">
+                           <font>
+                              <Font name="Bodoni 72 Smallcaps Book" size="16.0" />
+                           </font>
+                        </Label>
+                     </children>
+                     <styleClass>
+                        <String fx:value="button_color" />
+                        <String fx:value="button_radius" />
+                     </styleClass>
+                     <padding>
+                        <Insets left="20.0" />
+                     </padding>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </HBox>
+                  <HBox id="StockHistory" alignment="CENTER_LEFT" layoutX="15.0" layoutY="215.0" onMouseClicked="#formClick" prefHeight="100.0" prefWidth="200.0" spacing="8.0">
                      <children>
                         <SVGPath content="M20 2c7.732 0 14 6.268 14 14s-6.268 14-14 14v-3c2.938 0 5.701-1.144 7.778-3.222s3.222-4.84 3.222-7.778c0-2.938-1.144-5.701-3.222-7.778s-4.84-3.222-7.778-3.222c-2.938 0-5.701 1.144-7.778 3.222-1.598 1.598-2.643 3.601-3.041 5.778h5.819l-7 8-7-8h5.143c0.971-6.784 6.804-12 13.857-12zM26 14v4h-8v-10h4v6zM20 2c7.732 0 14 6.268 14 14s-6.268 14-14 14v-3c2.938 0 5.701-1.144 7.778-3.222s3.222-4.84 3.222-7.778c0-2.938-1.144-5.701-3.222-7.778s-4.84-3.222-7.778-3.222c-2.938 0-5.701 1.144-7.778 3.222-1.598 1.598-2.643 3.601-3.041 5.778h5.819l-7 8-7-8h5.143c0.971-6.784 6.804-12 13.857-12zM26 14v4h-8v-10h4v6z" styleClass="text_field_color" />
                         <Label styleClass="text_field_color" text="STOCK HISTORY">
@@ -258,10 +282,13 @@
                      <children>
                         <Label fx:id="lb_message" styleClass="warning_message">
                            <font>
-                              <Font size="11.0" />
+                              <Font name="Bodoni 72 Smallcaps Book" size="13.0" />
                            </font>
                         </Label>
                      </children>
+                     <padding>
+                        <Insets bottom="5.0" />
+                     </padding>
                   </HBox>
                   <StackPane fx:id="st_pane" maxHeight="600.0" maxWidth="800.0" prefHeight="150.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
                      <styleClass>

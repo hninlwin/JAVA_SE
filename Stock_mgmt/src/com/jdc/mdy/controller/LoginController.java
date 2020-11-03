@@ -6,7 +6,8 @@ import java.util.ResourceBundle;
 import com.jdc.mdy.entity.User;
 import com.jdc.mdy.service.UserService;
 import com.jdc.mdy.utils.StockException;
-import com.jdc.mdy.utils.StringUtils;
+import com.jdc.mdy.utils.MessageManager;
+import com.jdc.mdy.utils.MessageManager.MessageStyle;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -37,7 +38,8 @@ public class LoginController implements Initializable {
 
 	@FXML
 	void enter(ActionEvent event) {
-
+		
+		
 		try {
 
 			if (tf_userName.getText().isEmpty() || tf_userName.getText() == null) {
@@ -62,8 +64,8 @@ public class LoginController implements Initializable {
 			cancel();
 
 		} catch (Exception e) {
-			lb_message.setText(e.getMessage());
-			StringUtils.showMessage(lb_message);
+			
+			MessageManager.showMessage(e.getMessage(),MessageStyle.error);
 
 		}
 
@@ -73,6 +75,8 @@ public class LoginController implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 
 		service=new UserService();
+		new MessageManager(lb_message);
+		
 	}
 
 }

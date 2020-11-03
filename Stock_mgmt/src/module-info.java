@@ -1,5 +1,5 @@
 module Stock {
-	
+
 	exports com.jdc.mdy;
 
 	requires javafx.base;
@@ -10,8 +10,8 @@ module Stock {
 	requires lombok;
 	requires jdk.javadoc;
 	requires java.desktop;
-	
+
 	opens com.jdc.mdy.controller to javafx.fxml;
-	
-	
+	opens com.jdc.mdy.entity to javafx.base;
+
 }

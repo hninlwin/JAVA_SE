@@ -1,10 +1,13 @@
 package com.jdc.mdy.controller;
 
+import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 import com.jdc.mdy.entity.User;
+import com.jdc.mdy.utils.MessageManager;
 
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
@@ -93,11 +96,13 @@ public class MainController implements Initializable {
 		}
 
 	}
+	
 	private void slideAnimation() {
 		TranslateTransition tr = new TranslateTransition();
+		
 		tr.setNode(st_pane);
 		tr.setAutoReverse(false);
-		tr.setDuration(Duration.millis(1000));
+		tr.setDuration(Duration.seconds(1));
 
 		tr.setFromX(800);
 		tr.setToX(0);
@@ -112,6 +117,7 @@ public class MainController implements Initializable {
 		loadView("User");
 		lb_form.setText("User");
 		lb_user.setText(user.getName());
+		new MessageManager(lb_message);
 	
 	}
 
