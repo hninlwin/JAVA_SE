@@ -99,7 +99,7 @@ public class ItemController implements ButtonManager {
 	private void loadView() {
 
 		tv_item.getItems().clear();
-		tv_item.getItems().addAll(itemService.findAll());
+		tv_item.getItems().addAll(itemService.findAll(null,null));
 	}
 
 }

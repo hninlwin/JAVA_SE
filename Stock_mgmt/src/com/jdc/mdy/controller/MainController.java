@@ -39,6 +39,9 @@ public class MainController implements Initializable {
 	private Label lb_user;
 	private static User user;
 	
+	public static User getUser() {
+		return user;
+	}
 	@FXML
 	void formClick(MouseEvent event) {
 

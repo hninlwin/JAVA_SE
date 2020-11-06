@@ -1,8 +1,9 @@
 package com.jdc.mdy.entity;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter @Setter
 public class Item {
 
 	private int id;
@@ -10,4 +11,9 @@ public class Item {
 	private int price;
 	private Category category;
 	private boolean active;
+	
+	@Override
+	public String toString() {
+		return name;
+	}
 }

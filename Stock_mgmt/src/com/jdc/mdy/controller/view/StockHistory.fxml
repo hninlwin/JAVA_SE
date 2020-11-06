@@ -9,53 +9,17 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.SVGPath?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" spacing="10.0" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.mdy.controller.StockHistoryController">
    <children>
-      <HBox>
+      <VBox>
          <children>
-            <GridPane hgap="5.0" prefHeight="60.0" prefWidth="650.0" vgap="10.0" HBox.hgrow="ALWAYS">
-              <columnConstraints>
-                <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-              </rowConstraints>
+            <HBox>
                <children>
-                  <HBox alignment="CENTER_LEFT">
-                     <children>
-                        <Label text="From : " />
-                        <DatePicker fx:id="dtp_from" prefHeight="27.0" prefWidth="180.0" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1">
-                     <children>
-                        <Label text="To  : " />
-                        <DatePicker fx:id="dtp_to" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" GridPane.rowIndex="1">
-                     <children>
-                        <Label text="Supplier Name : " />
-                        <ComboBox fx:id="cbo_supplier" prefHeight="27.0" prefWidth="128.0" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <children>
-                        <Label text="Category : " />
-                        <ComboBox fx:id="cbo_category" prefHeight="27.0" prefWidth="155.0" />
-                     </children>
-                  </HBox>
-                  <HBox alignment="CENTER_LEFT" styleClass="box_background-color" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                  <HBox alignment="CENTER_LEFT" prefHeight="32.0" prefWidth="261.0" styleClass="box_background-color">
                      <children>
                         <Label prefHeight="17.0" prefWidth="111.0" text="Item : " />
                         <TextField fx:id="tf_item" styleClass="form_dark_white" HBox.hgrow="ALWAYS" />
@@ -63,14 +27,30 @@
                      </children>
                   </HBox>
                </children>
-            </GridPane>
-            <HBox alignment="CENTER_RIGHT" prefHeight="60.0" prefWidth="93.0">
+            </HBox>
+         </children>
+      </VBox>
+      <HBox alignment="CENTER_LEFT" spacing="3.0">
+         <children>
+            <ComboBox fx:id="cbo_supplier" prefHeight="27.0" prefWidth="130.0" promptText="Supplier" />
+            <ComboBox fx:id="cbo_category" prefHeight="27.0" prefWidth="130.0" promptText="Category" />
+            <CheckBox fx:id="ch_isStockIn" mnemonicParsing="false" prefHeight="18.0" prefWidth="81.0" selected="true" text="Is StockIn" />
+            <CheckBox fx:id="ch_active" layoutX="316.0" layoutY="10.0" mnemonicParsing="false" text="Active" visible="false" />
+            <HBox alignment="CENTER_RIGHT" spacing="3.0" HBox.hgrow="ALWAYS">
                <children>
-                  <CheckBox fx:id="ch_active" mnemonicParsing="false" text="Active" />
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label text="From : " />
+                        <DatePicker fx:id="dtp_from" prefHeight="27.0" prefWidth="130.0" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT">
+                     <children>
+                        <Label text="To  : " />
+                        <DatePicker fx:id="dtp_to" prefHeight="27.0" prefWidth="130.0" />
+                     </children>
+                  </HBox>
                </children>
-               <padding>
-                  <Insets right="10.0" />
-               </padding>
             </HBox>
          </children>
       </HBox>
@@ -87,7 +67,7 @@
                   <PropertyValueFactory property="category" />
                </cellValueFactory>
             </TableColumn>
-            <TableColumn minWidth="0.0" prefWidth="88.0" resizable="false" text="Current Qty">
+            <TableColumn minWidth="0.0" prefWidth="88.0" resizable="false" text="Qty">
                <cellValueFactory>
                   <PropertyValueFactory property="price" />
                </cellValueFactory>

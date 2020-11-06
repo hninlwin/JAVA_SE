@@ -18,12 +18,12 @@ public class ItemService {
 
 	public void save(Item item) {
 		
-		String sql="insert into item_tbl(name,price,category_tbl,active)values(?,?,?,?)";
+		String sql="insert into item_tbl(name,price,category_id,active)values(?,?,?,?)";
 		
 		try(Connection con=getConnection();
 				PreparedStatement stmt=con.prepareStatement(sql)){
 			
-			stmt.setString(1, item.getName());
+			stmt.setString(1, item.getName().toLowerCase());
 			stmt.setInt(2, item.getPrice());
 			stmt.setInt(3, item.getCategory().getId());
 			stmt.setBoolean(4, true);
@@ -36,19 +36,33 @@ public class ItemService {
 		
 	}
 
-	public List<Item>findAll() {
-		String sql="select i.name,i.price,i.active,c.id,c.name from item_tbl i left join category_tbl c on i.category_tbl=c.id where i.active=1";
+	public List<Item>findAll(String item,Category category) {
+		StringBuilder sb= new StringBuilder("select i.id,i.name,i.price,i.active,c.id,c.name from item_tbl i left join category_tbl c on i.category_id=c.id where i.active=1");
 		List<Item>list=new ArrayList<>();
+		List<Object>temp=new ArrayList<>();
+		
+		if(item !=null && !item.isEmpty()) {
+			temp.add(item.toLowerCase());
+			sb.append(" and i.name=?");
+		}
+		if(category!=null) {
+			temp.add(category.getId());
+			sb.append(" and i.category_id=?");
+		}
 		
 		try(Connection con=getConnection();
-				PreparedStatement stmt=con.prepareStatement(sql)){
+				PreparedStatement stmt=con.prepareStatement(sb.toString())){
+			
+			for(int i=0;i<temp.size();i++) {
+				stmt.setObject(i+1, temp.get(i));
+			}
 			
 			ResultSet rs=stmt.executeQuery();
 			while(rs.next()) {
 				
 				Item i=new Item();
 				Category c=new Category();
-				
+				i.setId(rs.getInt("i.id"));
 				i.setName(rs.getString("i.name"));
 				i.setPrice(rs.getInt("i.price"));
 				c.setId(rs.getInt("c.id"));

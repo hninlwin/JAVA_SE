@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" spacing="10.0" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.mdy.controller.StockController">
+   <children>
+      <HBox alignment="CENTER_LEFT" spacing="5.0" />
+      <HBox spacing="5.0" VBox.vgrow="ALWAYS">
+         <children>
+            <VBox prefHeight="540.0" prefWidth="382.0" spacing="3.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="27.0" prefWidth="186.0" spacing="3.0">
+                     <children>
+                        <ComboBox fx:id="cbo_category" prefHeight="27.0" prefWidth="177.0" promptText="Category" />
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_LEFT" prefHeight="27.0" prefWidth="186.0" spacing="3.0">
+                     <children>
+                        <ComboBox fx:id="cbo_supplier" disable="true" prefHeight="27.0" prefWidth="177.0" promptText="Supplier" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="BOTTOM_RIGHT">
+                     <children>
+                        
+                              <HBox alignment="CENTER_LEFT" styleClass="box_background-color" HBox.hgrow="ALWAYS">
+                           <children>
+                              <TextField fx:id="tf_item" promptText="item name.." styleClass="form_dark_white" HBox.hgrow="ALWAYS" />
+                              <SVGPath content="M30.5 0h-12c-0.825 0-1.977 0.477-2.561 1.061l-14.879 14.879c-0.583 0.583-0.583 1.538 0 2.121l12.879 12.879c0.583 0.583 1.538 0.583 2.121 0l14.879-14.879c0.583-0.583 1.061-1.736 1.061-2.561v-12c0-0.825-0.675-1.5-1.5-1.5zM23 12c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3zM30.5 0h-12c-0.825 0-1.977 0.477-2.561 1.061l-14.879 14.879c-0.583 0.583-0.583 1.538 0 2.121l12.879 12.879c0.583 0.583 1.538 0.583 2.121 0l14.879-14.879c0.583-0.583 1.061-1.736 1.061-2.561v-12c0-0.825-0.675-1.5-1.5-1.5zM23 12c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3zM30.5 0h-12c-0.825 0-1.977 0.477-2.561 1.061l-14.879 14.879c-0.583 0.583-0.583 1.538 0 2.121l12.879 12.879c0.583 0.583 1.538 0.583 2.121 0l14.879-14.879c0.583-0.583 1.061-1.736 1.061-2.561v-12c0-0.825-0.675-1.5-1.5-1.5zM23 12c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3zM30.5 0h-12c-0.825 0-1.977 0.477-2.561 1.061l-14.879 14.879c-0.583 0.583-0.583 1.538 0 2.121l12.879 12.879c0.583 0.583 1.538 0.583 2.121 0l14.879-14.879c0.583-0.583 1.061-1.736 1.061-2.561v-12c0-0.825-0.675-1.5-1.5-1.5zM23 12c-1.657 0-3-1.343-3-3s1.343-3 3-3 3 1.343 3 3-1.343 3-3 3z" scaleX="0.5" scaleY="0.5" styleClass="text_field_color" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <Label prefHeight="17.0" prefWidth="60.0" styleClass="text_field_color" text="Prev. Qtys" />
+                              <TextField fx:id="tf_prev_qty" prefHeight="27.0" prefWidth="46.0" styleClass="warning_message" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <CheckBox fx:id="ch_active" mnemonicParsing="false" text="Active" visible="false" />
+                  <TableView fx:id="tv_item" prefHeight="200.0" prefWidth="200.0" styleClass="text_field_color" VBox.vgrow="ALWAYS">
+                     <columns>
+                        <TableColumn fx:id="col_num_item" prefWidth="48.0" resizable="false" text="No." />
+                        <TableColumn prefWidth="150.0" resizable="false" text="Item">
+                           <cellValueFactory>
+                              <PropertyValueFactory property="name" />
+                           </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="108.0" text="Category">
+                           <cellValueFactory>
+                              <PropertyValueFactory property="category" />
+                           </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="108.0" text="Price">
+                           <cellValueFactory>
+                              <PropertyValueFactory property="price" />
+                           </cellValueFactory>
+                        </TableColumn>
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets top="40.0" />
+               </padding>
+            </VBox>
+            <VBox spacing="10.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <HBox alignment="CENTER_LEFT" spacing="3.0">
+                     <children>
+                        <CheckBox fx:id="ch_isStockIn" mnemonicParsing="false" selected="true" styleClass="text_field_color">
+                           <tooltip>
+                              <Tooltip text="Stock In/Out" />
+                           </tooltip></CheckBox>
+                        <Label fx:id="lb_stock" styleClass="text_field_color" text="StockIn Table">
+                           <font>
+                              <Font size="25.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="3.0" />
+                           </HBox.margin>
+                        </Label>
+                        <HBox alignment="CENTER_RIGHT" spacing="3.0" HBox.hgrow="ALWAYS">
+                           <children>
+                              <Button mnemonicParsing="false" onAction="#addStock" text="ADD">
+                                 <styleClass>
+                                    <String fx:value="button_color" />
+                                    <String fx:value="button_radius" />
+                                 </styleClass>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#clearStock" text="Clear">
+                                 <styleClass>
+                                    <String fx:value="button_color" />
+                                    <String fx:value="button_radius" />
+                                 </styleClass>
+                              </Button>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+                  <TableView fx:id="tv_stock" prefHeight="500.0" prefWidth="500.0" styleClass="text_field_color" VBox.vgrow="ALWAYS">
+                     <columns>
+                        <TableColumn fx:id="col_num_stock" prefWidth="48.0" resizable="false" text="No." />
+                        <TableColumn prefWidth="177.0" resizable="false" text="Item">
+                           <cellValueFactory>
+                              <PropertyValueFactory property="item" />
+                           </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn prefWidth="135.0" resizable="false" text="Category">
+                           <cellValueFactory>
+                              <PropertyValueFactory property="category" />
+                           </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn fx:id="col_qty" minWidth="0.0" prefWidth="144.0" text="Qty">
+                           <cellValueFactory>
+                              <PropertyValueFactory property="qty" />
+                           </cellValueFactory>
+                        </TableColumn>
+                        <TableColumn minWidth="0.0" prefWidth="144.0" text="Price">
+                           <cellValueFactory>
+                              <PropertyValueFactory property="price" />
+                           </cellValueFactory>
+                        </TableColumn>
+                     </columns>
+                  </TableView>
+               </children>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>
