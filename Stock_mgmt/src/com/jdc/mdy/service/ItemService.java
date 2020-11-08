@@ -37,6 +37,7 @@ public class ItemService {
 	}
 
 	public List<Item>findAll(String item,Category category) {
+		
 		StringBuilder sb= new StringBuilder("select i.id,i.name,i.price,i.active,c.id,c.name from item_tbl i left join category_tbl c on i.category_id=c.id where i.active=1");
 		List<Item>list=new ArrayList<>();
 		List<Object>temp=new ArrayList<>();

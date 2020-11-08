@@ -1,6 +1,7 @@
 package com.jdc.mdy.controller;
 
 import java.net.URL;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ResourceBundle;
@@ -21,6 +22,7 @@ import com.jdc.mdy.utils.StockException;
 import javafx.beans.property.ReadOnlyObjectWrapper;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -30,7 +32,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.TextFieldTableCell;
 import javafx.util.StringConverter;
 
-public class StockController implements ButtonManager {
+public class StockController implements Initializable {
 
 	@FXML
 	private ComboBox<Category> cbo_category;
@@ -96,16 +98,17 @@ public class StockController implements ButtonManager {
 		iService = new ItemService();
 		sService = new SupplierService();
 		stock_service = new StockService();
-		new ButtonManagerControl(this);
 		
 
 		cbo_category.getItems().addAll(cService.findAll());
 		cbo_supplier.getItems().addAll(sService.findAll());
+		
 		tv_item.getItems().addAll(iService.findAll(null, null));
 
 		ch_isStockIn.selectedProperty().addListener((a, b, c) -> {
-			cbo_supplier.setDisable(c);
+			cbo_supplier.setDisable(c);		
 			lb_stock.setText(c ? "StockIn Table" : "StockOut Table");
+			
 		});
 
 		col_num_item.setCellValueFactory(
@@ -210,7 +213,7 @@ public class StockController implements ButtonManager {
 		tv_item.getItems().addAll(iService.findAll(name, cat));
 	}
 
-	@Override
+	
 	public void save() {
 		try {
 
@@ -219,7 +222,7 @@ public class StockController implements ButtonManager {
 			stock.setStDetails(tv_stock.getItems());
 			stock.setSupplier(cbo_supplier.getValue());
 			stock.setUser(MainController.getUser());
-			stock.setDate(LocalDateTime.now());
+			stock.setDate(LocalDate.now());
 			stock.setStockIn(ch_isStockIn.isSelected());
 			stock.setActive(true);
 			stock_service.save(stock);
@@ -230,21 +233,6 @@ public class StockController implements ButtonManager {
 		}
 	}
 
-	@Override
-	public void search() {
-
-	}
-
-	@Override
-	public void delete() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void update() {
-		// TODO Auto-generated method stub
-
-	}
+	
 
 }

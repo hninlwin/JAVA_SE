@@ -1,5 +1,6 @@
 package com.jdc.mdy.entity;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -11,7 +12,7 @@ public class Stock {
 
 	private int id;
 	private boolean isStockIn;
-	private LocalDateTime date;
+	private LocalDate date;
 	private User user;
 	private Supplier supplier;
 	

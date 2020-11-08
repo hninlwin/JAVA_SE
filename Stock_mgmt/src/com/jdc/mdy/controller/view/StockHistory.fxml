@@ -12,6 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" spacing="10.0" stylesheets="@../../style.css" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.jdc.mdy.controller.StockHistoryController">
    <children>
@@ -34,7 +35,7 @@
          <children>
             <ComboBox fx:id="cbo_supplier" prefHeight="27.0" prefWidth="130.0" promptText="Supplier" />
             <ComboBox fx:id="cbo_category" prefHeight="27.0" prefWidth="130.0" promptText="Category" />
-            <CheckBox fx:id="ch_isStockIn" mnemonicParsing="false" prefHeight="18.0" prefWidth="81.0" selected="true" text="Is StockIn" />
+            <CheckBox fx:id="ch_stockIn" mnemonicParsing="false" prefHeight="18.0" prefWidth="81.0" text="StockIn" />
             <CheckBox fx:id="ch_active" layoutX="316.0" layoutY="10.0" mnemonicParsing="false" text="Active" visible="false" />
             <HBox alignment="CENTER_RIGHT" spacing="3.0" HBox.hgrow="ALWAYS">
                <children>
@@ -59,7 +60,7 @@
             <TableColumn fx:id="col_num" prefWidth="60.0" resizable="false" text="No." />
             <TableColumn prefWidth="206.0" resizable="false" text="Item">
                <cellValueFactory>
-                  <PropertyValueFactory property="name" />
+                  <PropertyValueFactory property="item" />
                </cellValueFactory>
             </TableColumn>
             <TableColumn prefWidth="53.0" text="Category">
@@ -69,17 +70,27 @@
             </TableColumn>
             <TableColumn minWidth="0.0" prefWidth="88.0" resizable="false" text="Qty">
                <cellValueFactory>
+                  <PropertyValueFactory property="qty" />
+               </cellValueFactory>
+            </TableColumn>
+             <TableColumn minWidth="0.0" prefWidth="88.0" resizable="false" text="Price">
+               <cellValueFactory>
                   <PropertyValueFactory property="price" />
                </cellValueFactory>
             </TableColumn>
             <TableColumn prefWidth="119.0" text="Supplier">
                <cellValueFactory>
-                  <PropertyValueFactory property="category" />
+                  <PropertyValueFactory property="supplier" />
+               </cellValueFactory>
+            </TableColumn>
+            <TableColumn prefWidth="119.0" text="Is StockIn">
+               <cellValueFactory>
+                  <PropertyValueFactory property="stockIn" />
                </cellValueFactory>
             </TableColumn>
             <TableColumn prefWidth="149.0" resizable="false" text="Stock Date">
                <cellValueFactory>
-                  <PropertyValueFactory property="category" />
+                  <PropertyValueFactory property="date" />
                </cellValueFactory>
             </TableColumn>
          </columns>
@@ -87,6 +98,40 @@
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
          </columnResizePolicy>
       </TableView>
+      <HBox alignment="CENTER_RIGHT" spacing="10.0">
+         <children>
+            <HBox alignment="CENTER_LEFT" spacing="3.0">
+               <children>
+                  <Label styleClass="text_field_color" text="Stock In">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tf_stockIn" prefHeight="27.0" prefWidth="59.0" styleClass="warning_message" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="331.0" layoutY="10.0" spacing="3.0">
+               <children>
+                  <Label styleClass="text_field_color" text="Stock Out">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tf_stockOut" prefHeight="27.0" prefWidth="59.0" styleClass="warning_message" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" layoutX="384.0" layoutY="10.0" spacing="3.0">
+               <children>
+                  <Label styleClass="text_field_color" text="Stock Remain">
+                     <font>
+                        <Font size="17.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="tf_remain" prefHeight="27.0" prefWidth="59.0" styleClass="warning_message" />
+               </children>
+            </HBox>
+         </children>
+      </HBox>
    </children>
    <padding>
       <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />

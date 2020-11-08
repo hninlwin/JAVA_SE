@@ -79,8 +79,8 @@ public class MainController implements Initializable {
 			Parent root = FXMLLoader.load(MainController.class.getResource("view/Main.fxml"));
 			Stage stage = new Stage();
 			
-			//Dimension dm=Toolkit.getDefaultToolkit().getScreenSize();
-			stage.setScene(new Scene(root));
+			Dimension dm=Toolkit.getDefaultToolkit().getScreenSize();
+			stage.setScene(new Scene(root,dm.getWidth(),dm.getHeight()));
 			stage.show();
 
 		} catch (IOException e) {
@@ -95,6 +95,7 @@ public class MainController implements Initializable {
 			st_pane.getChildren().clear();
 			st_pane.getChildren().add(root);
 			slideAnimation();
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
