@@ -90,15 +90,17 @@ public class StockHistoryController implements Initializable{
 
 	private void loadView() {
 	
-		tv_stock.getItems().clear();
 		inQty=0;
 		outQty=0;
+		tv_stock.getItems().clear();
+		
 		
 		List<StockDetail>list=stService.search(cbo_category.getValue(), cbo_supplier.getValue(), tf_item.getText(),ch_stockIn.isSelected(),dtp_from.getValue(),dtp_to.getValue());
 		
 		list.forEach(sd->{
 		
 			tv_stock.getItems().add(sd);
+			
 			if(sd.getStock().isStockIn()) {
 				inQty+=sd.getQty();
 			}else {

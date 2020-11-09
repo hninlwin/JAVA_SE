@@ -48,7 +48,7 @@
                         <HBox alignment="CENTER">
                            <children>
                               <Label prefHeight="17.0" prefWidth="60.0" styleClass="text_field_color" text="Prev. Qtys" />
-                              <TextField fx:id="tf_prev_qty" prefHeight="27.0" prefWidth="46.0" styleClass="warning_message" />
+                              <TextField fx:id="tf_prev_qty" editable="false" prefHeight="27.0" prefWidth="46.0" styleClass="warning_message" />
                            </children>
                         </HBox>
                      </children>

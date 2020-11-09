@@ -20,6 +20,8 @@ import com.jdc.mdy.utils.MessageManager.MessageStyle;
 import com.jdc.mdy.utils.StockException;
 
 import javafx.beans.property.ReadOnlyObjectWrapper;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -108,8 +110,11 @@ public class StockController implements Initializable {
 		ch_isStockIn.selectedProperty().addListener((a, b, c) -> {
 			cbo_supplier.setDisable(c);		
 			lb_stock.setText(c ? "StockIn Table" : "StockOut Table");
+			tv_stock.getItems().clear();
 			
 		});
+		
+		
 
 		col_num_item.setCellValueFactory(
 				col -> new ReadOnlyObjectWrapper<Integer>(tv_item.getItems().indexOf(col.getValue()) + 1));
@@ -117,6 +122,8 @@ public class StockController implements Initializable {
 				col -> new ReadOnlyObjectWrapper<Integer>(tv_stock.getItems().indexOf(col.getValue()) + 1));
 
 		cbo_category.valueProperty().addListener((a, b, c) -> loadViewItem(c, tf_item.getText()));
+		
+		
 
 		tf_item.textProperty().addListener((a, b, c) -> loadViewItem(cbo_category.getValue(), c));
 
@@ -149,9 +156,15 @@ public class StockController implements Initializable {
 			}
 		}));
 		tv_stock.setEditable(true);
+		
 		col_qty.setOnEditCommit(event -> {
 			StockDetail sd = event.getRowValue();
+			int i=Integer.parseInt(checkQty());
+			if(event.getNewValue()<i) {
 			sd.setQty(event.getNewValue());
+			}else {
+				sd.setQty(i);
+			}
 			tv_stock.refresh();
 		});
 

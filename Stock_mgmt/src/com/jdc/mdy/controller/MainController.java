@@ -79,8 +79,8 @@ public class MainController implements Initializable {
 			Parent root = FXMLLoader.load(MainController.class.getResource("view/Main.fxml"));
 			Stage stage = new Stage();
 			
-			Dimension dm=Toolkit.getDefaultToolkit().getScreenSize();
-			stage.setScene(new Scene(root,dm.getWidth(),dm.getHeight()));
+			//Dimension dm=Toolkit.getDefaultToolkit().getScreenSize();
+			stage.setScene(new Scene(root));
 			stage.show();
 
 		} catch (IOException e) {

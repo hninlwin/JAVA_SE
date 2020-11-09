@@ -107,7 +107,7 @@
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="tf_stockIn" prefHeight="27.0" prefWidth="59.0" styleClass="warning_message" />
+                  <TextField fx:id="tf_stockIn" editable="false" prefHeight="27.0" prefWidth="59.0" styleClass="warning_message" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" layoutX="331.0" layoutY="10.0" spacing="3.0">
@@ -117,7 +117,7 @@
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="tf_stockOut" prefHeight="27.0" prefWidth="59.0" styleClass="warning_message" />
+                  <TextField fx:id="tf_stockOut" editable="false" prefHeight="27.0" prefWidth="59.0" styleClass="warning_message" />
                </children>
             </HBox>
             <HBox alignment="CENTER_LEFT" layoutX="384.0" layoutY="10.0" spacing="3.0">
@@ -127,7 +127,7 @@
                         <Font size="17.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="tf_remain" prefHeight="27.0" prefWidth="59.0" styleClass="warning_message" />
+                  <TextField fx:id="tf_remain" editable="false" prefHeight="27.0" prefWidth="59.0" styleClass="warning_message" />
                </children>
             </HBox>
          </children>
