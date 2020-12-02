@@ -21,3 +21,8 @@
 	-fx-background-color: #bbbbbb;
 	-fx-border-color: #34626c;
 }
+
+.box_background-color{
+	-fx-background-color: #039BE5,#F5F5F5,#F5F5F5;
+	-fx-background-insets: 0.0 0.0 -2.0 0.0, 0.0 0.0 0.0 0.0, 0.0 -1.0 3.0 -1.0;
+}
