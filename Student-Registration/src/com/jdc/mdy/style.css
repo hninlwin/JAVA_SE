@@ -1,0 +1,23 @@
+.root{
+	-fx-background-color: #e8e8e8;
+}
+
+.root-border{
+	-fx-border-color: #f05454;
+}
+
+.root-label{
+	-fx-text-fill:#30475e;
+}
+
+.button{
+	-fx-border-radius: 10px;
+	-fx-background-radius: 10px;
+	-fx-background-color: #e8e8e8;
+	-fx-border-color: #30475e;
+}
+
+.button:hover{
+	-fx-background-color: #bbbbbb;
+	-fx-border-color: #34626c;
+}
