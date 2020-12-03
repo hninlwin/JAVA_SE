@@ -1,5 +1,7 @@
 package com.jdc.mdy.model;
 
+import com.jdc.mdy.model.Contact.City;
+
 public class Student {
 	
 	private int id;
@@ -32,6 +34,16 @@ public class Student {
 		this.contact = contact;
 	}
 	
+	public String getPhone() {
+		return getContact().getPhone();
+	}
 	
+	public City getCity() {
+		return getContact().getCity();
+	}
+	
+	public String getAddress() {
+		return getContact().getAddress();
+	}
 
 }

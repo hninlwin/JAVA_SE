@@ -8,6 +8,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -16,22 +17,22 @@
    <children>
       <HBox alignment="CENTER_RIGHT" spacing="3.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#save" text="Save">
+            <Button fx:id="btn_save" mnemonicParsing="false" onAction="#save" onKeyPressed="#enter" text="Save">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="684.0" layoutY="10.0" mnemonicParsing="false" onAction="#clear" text="Clear">
+            <Button fx:id="btn_clear" layoutX="684.0" layoutY="10.0" mnemonicParsing="false" onAction="#clear" onKeyPressed="#enter" text="Clear">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="696.0" layoutY="10.0" mnemonicParsing="false" onAction="#search" text="Search">
+            <Button fx:id="btn_search" layoutX="696.0" layoutY="10.0" mnemonicParsing="false" onAction="#search" onKeyPressed="#enter" text="Search">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button layoutX="681.0" layoutY="10.0" mnemonicParsing="false" onAction="#delete" text="Delete">
+            <Button fx:id="btn_delete" layoutX="681.0" layoutY="10.0" mnemonicParsing="false" onAction="#delete" onKeyPressed="#enter" text="Delete">
                <font>
                   <Font size="20.0" />
                </font>
@@ -49,7 +50,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="tf_name" />
+                        <TextField fx:id="tf_name" onKeyPressed="#enter" />
                      </children>
                   </HBox>
                   <HBox>
@@ -59,7 +60,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="tf_roll" prefHeight="27.0" prefWidth="106.0" />
+                        <TextField fx:id="tf_roll" onKeyPressed="#enter" prefHeight="27.0" prefWidth="106.0" />
                      </children>
                   </HBox>
                   <HBox>
@@ -69,7 +70,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="tf_phone" prefHeight="27.0" prefWidth="192.0" />
+                        <TextField fx:id="tf_phone" onKeyPressed="#enter" prefHeight="27.0" prefWidth="192.0" />
                      </children>
                   </HBox>
                </children>
@@ -83,7 +84,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <ComboBox fx:id="cbo_city" prefHeight="27.0" prefWidth="160.0" />
+                        <ComboBox fx:id="cbo_city" onKeyPressed="#enter" prefHeight="27.0" prefWidth="160.0" />
                      </children>
                   </HBox>
                   <HBox alignment="CENTER_LEFT" HBox.hgrow="ALWAYS">
@@ -93,7 +94,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextArea fx:id="ta_address" prefHeight="43.0" prefWidth="360.0" HBox.hgrow="ALWAYS" />
+                        <TextArea fx:id="ta_address" onKeyPressed="#enter" prefHeight="43.0" prefWidth="360.0" HBox.hgrow="ALWAYS" />
                      </children>
                   </HBox>
                </children>
@@ -107,12 +108,32 @@
       </HBox>
       <TableView fx:id="tv_student" prefHeight="200.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
         <columns>
-          <TableColumn prefWidth="75.0" resizable="false" text="No." />
-          <TableColumn prefWidth="123.0" resizable="false" text="Name" />
-            <TableColumn prefWidth="63.0" resizable="false" text="Roll Num" />
-            <TableColumn prefWidth="90.0" resizable="false" text="Phone" />
-            <TableColumn prefWidth="149.0" resizable="false" text="City" />
-            <TableColumn prefWidth="283.0" resizable="false" text="Address" />
+          <TableColumn fx:id="col_num" prefWidth="75.0" resizable="false" text="No." />
+          <TableColumn prefWidth="123.0" resizable="false" text="Name">
+          	<cellValueFactory>
+          		<PropertyValueFactory property="name" />
+          	</cellValueFactory>
+          </TableColumn>
+            <TableColumn prefWidth="63.0" resizable="false" text="Roll Num">
+          	<cellValueFactory>
+          		<PropertyValueFactory property="roll" />
+          	</cellValueFactory>
+          </TableColumn>
+            <TableColumn prefWidth="90.0" resizable="false" text="Phone">
+          	<cellValueFactory>
+          		<PropertyValueFactory property="phone" />
+          	</cellValueFactory>
+          </TableColumn>
+            <TableColumn prefWidth="149.0" resizable="false" text="City">
+          	<cellValueFactory>
+          		<PropertyValueFactory property="city" />
+          	</cellValueFactory>
+          </TableColumn>
+            <TableColumn prefWidth="283.0" resizable="false" text="Address">
+          	<cellValueFactory>
+          		<PropertyValueFactory property="address" />
+          	</cellValueFactory>
+          </TableColumn>
         </columns>
          <columnResizePolicy>
             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

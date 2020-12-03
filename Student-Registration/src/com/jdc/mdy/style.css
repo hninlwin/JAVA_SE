@@ -17,7 +17,7 @@
 	-fx-border-color: #30475e;
 }
 
-.button:hover{
+.button:hover,.button:focus{
 	-fx-background-color: #bbbbbb;
 	-fx-border-color: #34626c;
 }
