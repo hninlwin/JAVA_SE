@@ -8,9 +8,11 @@ import com.jdc.mdy.utis.Message;
 import com.jdc.mdy.utis.Message.MStyle;
 import com.jdc.mdy.utis.StudentException;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -60,6 +62,8 @@ public class LoginController implements Initializable{
 		}
     	
     }
+    
+   
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
