@@ -39,15 +39,19 @@ public class StudentService {
 
 	public void saveStudent(Student st, int id) {
 
-		String sql = "insert into student_tbl (name,roll,contact_id)values(?,?,?)";
+		String sql = "insert into student_tbl (name,roll,contact_id,active)values(?,?,?,?)";
 		try (Connection con = getConnection(); PreparedStatement stmt = con.prepareStatement(sql)) {
 
 			stmt.setString(1, st.getName().toLowerCase());
 			stmt.setString(2, st.getRoll().toLowerCase());
 			stmt.setInt(3, id);
+			stmt.setBoolean(4, true);
+			
+			
 			stmt.executeUpdate();
 
 		} catch (Exception e) {
+			
 			Message.showMessage(e.getMessage(), MStyle.ERROR);
 		}
 	}
@@ -58,7 +62,7 @@ public class StudentService {
 		List<Object> temp = new ArrayList<>();
 
 		StringBuilder sb = new StringBuilder(
-				"select s.id,s.name,s.roll,c.city,c.id,c.phone,c.address from Student_tbl s join Contact_tbl c on s.contact_id=c.id where 1=1");
+				"select s.id,s.name,s.roll,c.city,c.id,c.phone,c.address from Student_tbl s join Contact_tbl c on s.contact_id=c.id where active=1");
 
 		if (null != stu) {
 			
@@ -110,6 +114,43 @@ public class StudentService {
 			Message.showMessage(e.getMessage(), MStyle.ERROR);
 		}
 		return list;
+	}
+
+	public void update(Student student) {
+		String sql = "update Contact_tbl  set phone=?,city=?,address=? where id=?";
+		try (Connection con = getConnection();
+				PreparedStatement stmt = con.prepareStatement(sql)) {
+
+			stmt.setString(1, student.getContact().getPhone().toLowerCase());
+			stmt.setString(2, student.getContact().getCity().name());
+			stmt.setString(3, student.getContact().getAddress().toLowerCase());
+			stmt.setInt(4, student.getContact().getId());
+			
+			stmt.executeUpdate();
+			
+			updateStudent(student);
+			
+			Message.showMessage("Successfully update student ", MStyle.SUCCESS);
+		} catch (Exception e) {
+			Message.showMessage(e.getMessage(), MStyle.ERROR);
+		}
+	}
+	
+	public void updateStudent(Student st) {
+
+		String sql = "update Student_tbl set name=?,roll=?,active=? where id=?";
+		try (Connection con = getConnection(); PreparedStatement stmt = con.prepareStatement(sql)) {
+
+			stmt.setString(1, st.getName().toLowerCase());
+			stmt.setString(2, st.getRoll().toLowerCase());
+			stmt.setBoolean(3, st.isActive());
+			stmt.setInt(4, st.getId());
+			stmt.executeUpdate();
+
+		} catch (Exception e) {
+			
+			Message.showMessage(e.getMessage(), MStyle.ERROR);
+		}
 	}
 
 }

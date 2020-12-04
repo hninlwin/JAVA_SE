@@ -8,6 +8,7 @@ public class Student {
 	private String name;
 	private String roll;
 	private Contact contact;
+	private boolean active;
 	
 	public int getId() {
 		return id;
@@ -23,6 +24,13 @@ public class Student {
 	}
 	public String getRoll() {
 		return roll;
+	}
+		
+	public boolean isActive() {
+		return active;
+	}
+	public void setActive(boolean active) {
+		this.active = active;
 	}
 	public void setRoll(String roll) {
 		this.roll = roll;
@@ -45,5 +53,11 @@ public class Student {
 	public String getAddress() {
 		return getContact().getAddress();
 	}
+	
+	public int getContactId(){
+		return getContact().getId();
+	}
+	
+	
 
 }

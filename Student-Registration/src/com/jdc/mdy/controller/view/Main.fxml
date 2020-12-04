@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
@@ -103,6 +104,9 @@
       </VBox>
       <HBox alignment="CENTER_RIGHT">
          <children>
+            <CheckBox fx:id="chk_active" mnemonicParsing="false" selected="true" visible="false" />
+            <TextField fx:id="tf_st_id" editable="false" prefHeight="27.0" prefWidth="48.0" text="0" visible="false" />
+            <TextField fx:id="tf_cont_id" editable="false" layoutX="610.0" layoutY="10.0" prefHeight="27.0" prefWidth="45.0" text="0" visible="false" />
             <Label fx:id="lb_message" />
          </children>
       </HBox>
@@ -132,6 +136,16 @@
             <TableColumn prefWidth="283.0" resizable="false" text="Address">
           	<cellValueFactory>
           		<PropertyValueFactory property="address" />
+          	</cellValueFactory>
+          </TableColumn>
+            <TableColumn prefWidth="75.0" resizable="false" text="stu_id" visible="false">
+          	<cellValueFactory>
+          		<PropertyValueFactory property="id" />
+          	</cellValueFactory>
+          </TableColumn>
+            <TableColumn prefWidth="75.0" resizable="false" text="contact_id" visible="false">
+          	<cellValueFactory>
+          		<PropertyValueFactory property="contactId" />
           	</cellValueFactory>
           </TableColumn>
         </columns>
