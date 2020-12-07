@@ -1,0 +1,28 @@
+.root{
+	-fx-background-color: #e8e8e8;
+}
+
+.root-border{
+	-fx-border-color: #f05454;
+}
+
+.root-label{
+	-fx-text-fill:#30475e;
+}
+
+.button{
+	-fx-border-radius: 10px;
+	-fx-background-radius: 10px;
+	-fx-background-color: #e8e8e8;
+	-fx-border-color: #30475e;
+}
+
+.button:hover,.button:focus{
+	-fx-background-color: #bbbbbb;
+	-fx-border-color: #34626c;
+}
+
+.box_background-color{
+	-fx-background-color: #039BE5,#F5F5F5,#F5F5F5;
+	-fx-background-insets: 0.0 0.0 -2.0 0.0, 0.0 0.0 0.0 0.0, 0.0 -1.0 3.0 -1.0;
+}
