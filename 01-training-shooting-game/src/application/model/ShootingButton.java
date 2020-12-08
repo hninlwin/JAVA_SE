@@ -1,19 +1,19 @@
-package application.view;
+package application.model;
 
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseButton;
 
 public class ShootingButton extends Button {
 	
-	private static final String btn_show_img="-fx-border-radius:50;-fx-background-radius:50;-fx-background-color:transparent;-fx-background-image:url('application/view/images/btn.png')";
-	private static final String btn_press_img="-fx-background-color:transparent;-fx-background-image:url('application/view/images/btn_press.png')";
+	private static final String btn_show_img="-fx-background-color:transparent;-fx-background-image:url('application/view/images/button-show.png')";
+	private static final String btn_press_img="-fx-background-color:transparent;-fx-background-image:url('application/view/images/button-press.png')";
 
 	public ShootingButton(String name) {
 		
 		setText(name);
-		setPrefWidth(150);
+		setPrefWidth(124);
 		setPrefHeight(50);
-		
+		getStyleClass().add("button_show");
 		setStyle(btn_show_img);
 		setInitializer();
 	}
