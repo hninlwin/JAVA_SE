@@ -20,6 +20,7 @@ public class ShootingSubScene extends SubScene {
 		
 	}
 
+	
 	public void moveScene() {
 		TranslateTransition tr = new TranslateTransition();
 		tr.setDuration(Duration.seconds(1));
@@ -29,7 +30,7 @@ public class ShootingSubScene extends SubScene {
 			tr.setToX(-570);
 			isHidden = false;
 		} else {
-			tr.setToX(0);
+			tr.setToX(500);
 			isHidden = true;
 		}
 		tr.play();
