@@ -1,38 +1,52 @@
 package application.model;
 
+import java.awt.MultipleGradientPaint.CycleMethod;
+
+import application.view.ViewManager;
 import javafx.animation.TranslateTransition;
 import javafx.scene.SubScene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.Background;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.RadialGradient;
+import javafx.scene.paint.Stop;
 import javafx.util.Duration;
 
 public class ShootingSubScene extends SubScene {
-	
-	private boolean isHidden;
-	
-	private static AnchorPane sub=new AnchorPane();
-	
 
+	private boolean isHidden;
+
+	private static String sub_bg="application/view/images/sub_bg2.png";
+	
 	public ShootingSubScene() {
-		super(sub, 550, 350);
-		isHidden=true;
+		super(new AnchorPane(), 500, 350);
+		AnchorPane pane=getPane();
+		pane.setBackground(new Background(ViewManager.createBrackground(sub_bg)));
+		pane.setStyle("-fx-background-color: linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%); -fx-background-insets: 0;-fx-background-radius:30px;-fx-border-radius:30px;");
 		setLayoutX(800);
-		setLayoutY(100);
+		setLayoutY(150);
+		isHidden = true;
 		
 	}
 
-
 	public void moveScene() {
-		TranslateTransition tr=new TranslateTransition();
+		TranslateTransition tr = new TranslateTransition();
 		tr.setDuration(Duration.seconds(1));
 		tr.setNode(this);
-		tr.setToX(-500);
+		
+		if (isHidden) {
+			tr.setToX(-570);
+			isHidden = false;
+		} else {
+			tr.setToX(0);
+			isHidden = true;
+		}
 		tr.play();
 	}
 
-
 	public AnchorPane getPane() {
-		return sub;
-		
+		return (AnchorPane) this.getRoot();
+
 	}
 
 }

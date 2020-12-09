@@ -17,6 +17,7 @@ public class ShipPicker extends VBox{
 	public ShipPicker(SHIP ship) {
 		circleImg=new ImageView(new Image(notChoosenImg));
 		shipImg=new ImageView(new Image(ship.getUrl()));
+		shipImg.setRotate(180);
 		this.ship=ship;
 		isChoose=false;
 		this.getChildren().addAll(circleImg,shipImg);
