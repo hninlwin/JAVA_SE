@@ -1,27 +1,18 @@
 package application.model;
 
-import java.awt.MultipleGradientPaint.CycleMethod;
 
-import application.view.ViewManager;
 import javafx.animation.TranslateTransition;
 import javafx.scene.SubScene;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.RadialGradient;
-import javafx.scene.paint.Stop;
 import javafx.util.Duration;
 
 public class ShootingSubScene extends SubScene {
 
 	private boolean isHidden;
 
-	private static String sub_bg="application/view/images/sub_bg2.png";
-	
 	public ShootingSubScene() {
 		super(new AnchorPane(), 500, 350);
 		AnchorPane pane=getPane();
-		pane.setBackground(new Background(ViewManager.createBrackground(sub_bg)));
 		pane.setStyle("-fx-background-color: linear-gradient(#686868 0%, #232723 25%, #373837 75%, #757575 100%); -fx-background-insets: 0;-fx-background-radius:30px;-fx-border-radius:30px;");
 		setLayoutX(800);
 		setLayoutY(150);

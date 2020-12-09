@@ -93,16 +93,16 @@ public class ViewManager {
 		switch (text) {
 		case "START":
 			shipChooserScene = getSceneForm(shipChooserScene);
-			checkSubScene(shipChooserScene);
+			slideSubScene(shipChooserScene);
 			createShipChooser(shipChooserScene);
 			break;
 		case "SCORE":
 			shipScoreScene = getSceneForm(shipScoreScene);
-			checkSubScene(shipScoreScene);
+			slideSubScene(shipScoreScene);
 			break;
 		case "HELP":
 			shipHelpScene = getSceneForm(shipHelpScene);
-			checkSubScene(shipHelpScene);
+			slideSubScene(shipHelpScene);
 			break;
 		default:
 			Platform.exit();
@@ -159,19 +159,15 @@ public class ViewManager {
 		return hb;
 	}
 
-	private void checkSubScene(ShootingSubScene ship) {
+	private void slideSubScene(ShootingSubScene ship) {
 
 		if (isHiddenScene != null) {
 			isHiddenScene.moveScene();
 		}
-
 		ship.moveScene();
 		isHiddenScene = ship;
-
 	}
-
 	private ShootingSubScene getSceneForm(ShootingSubScene shootScene) {
-
 		if (shootScene == null) {
 			shootScene = new ShootingSubScene();
 			mainPane.getChildren().add(shootScene);
